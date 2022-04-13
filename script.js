@@ -420,7 +420,7 @@ function populateCards(numOfCards, query) {
                 transitionScreen(); //Move the colors and card sections up
             }
         
-        ).catch(function() {document.getElementById('loadingCover').style.display = 'none';document.getElementById('commanderButton').disabled=false;console.log('Something went wrong');alert("There was an error, Scryfall is most likely offline. Check their twitter to verify https://twitter.com/scryfall");});
+        ).catch(function() {document.getElementById('loadingCover').style.display = 'none';document.getElementById('commanderButton').disabled=false;console.log('Something went wrong ');alert("There was an error, Scryfall is most likely offline. Check their twitter to verify https://twitter.com/scryfall");});
 }
 
 function createNewCardDiv(images, link, name, isDouble = false, isFlip = false) {
@@ -480,21 +480,26 @@ function createNewCardDiv(images, link, name, isDouble = false, isFlip = false) 
 }
 
 function transitionScreen() {
-    let colorScreen = document.getElementById('colorsSection');
-    let commanderScreen = document.getElementById('cardWrapper');
+    // let colorScreen = document.getElementById('colorsSection');
+    // let commanderScreen = document.getElementById('cardWrapper');
+    let scr = document.getElementById('movingFrame');
 
     if (onColorScreen) {
+        document.body.style.overflowY = "scroll"
         // colorScreen.style.top = '-100%';
-        colorScreen.style.transform = "translateY(-100vh)"
+        // colorScreen.style.transform = "translateY(-100vh)"
         // commanderScreen.style.top = '0';
-        commanderScreen.style.transform = 'translateY(-95vh)';
+        // commanderScreen.style.transform = 'translateY(-95vh)';
+        scr.style.transform = 'translateY(-100vh)'
         onColorScreen = false;
     }
     else {
+        document.body.style.overflowY = "hidden"
         // commanderScreen.style.top = '200%';
-        commanderScreen.style.transform = 'translateY(100vh)';
+        // commanderScreen.style.transform = 'translateY(100vh)';
         // colorScreen.style.top = '0';
-        colorScreen.style.transform = "translateY(0vh)"
+        // colorScreen.style.transform = "translateY(0vh)"
+        scr.style.transform = 'translateY(0vh)'
         onColorScreen = true;
     }
 }

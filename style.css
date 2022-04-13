@@ -57,6 +57,7 @@ input[type=number] {
     transition: all 1s ease-in-out;
     top: 0;
     overflow: auto;
+    width: 100%;
 }
 
 .header {
@@ -94,7 +95,7 @@ input[type=number] {
 }
 
 .colorless {
-    margin-top: 5%;
+    margin-top: 5vh;
     cursor: pointer;
     user-select: none;
     -moz-user-select: none;
@@ -136,8 +137,8 @@ input[type=number] {
 
 .nameText {
     display: block;
-    margin: 30px;
-    overflow: visible;
+    /* margin: 30px; */
+    /* overflow: visible; */
     text-align: center;
     font-size: 100px;
     width: auto;
