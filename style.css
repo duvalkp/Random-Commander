@@ -94,6 +94,11 @@ input[type=number] {
     text-decoration: none;
 }
 
+.button {
+    background-color: slategray;
+    border-radius: 10px;
+}
+
 .colorless {
     margin-top: 5vh;
     cursor: pointer;
@@ -137,7 +142,7 @@ input[type=number] {
 
 .nameText {
     display: block;
-    /* margin: 30px; */
+    margin: 10vh;
     /* overflow: visible; */
     text-align: center;
     font-size: 100px;
@@ -154,6 +159,9 @@ input[type=number] {
 .commanderWrapper {
     width: auto;
     height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .commanderButton {
@@ -174,25 +182,36 @@ input[type=number] {
 }
 
 .commanderInput {
-    position: absolute;
     cursor: pointer;
-    z-index: 3;
     background-color: #4B4B4B;
     border-color: transparent;
-    border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
-    width: 25px;
     outline: none;
     user-select: none;
-    transition: color 0.5s ease-in-out;
+    white-space: nowrap;
+    width: 5%;
 }
 
-.commanderInput:hover {
-    color: white;
+.counterWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.inputSpinner {
+.counter {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+    /* background-color: slategray; */
+}
+
+/* .inputSpinner {
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -207,14 +226,7 @@ input[type=number] {
 
 .inputSpinner:hover {
     color: white;
-}
-
-.inputWrapper {
-    width: 25px;
-    margin-top: 8px;
-    margin-left: 65px;
-    position: absolute;
-}
+} */
 
 .debugmodal {
     position: fixed;
