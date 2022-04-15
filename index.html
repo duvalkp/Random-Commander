@@ -39,14 +39,14 @@
 
                 <p id="name" class="nameText">Choose one or more colors</p>
                 <div class="commanderWrapper">
-                    <div class="inputWrapper">
-                        <span id="plus" class="inputSpinner" onmouseenter="clearTimeout(spinnerTimer)" onmouseleave="spinnerTimer = setTimeout(hideSpinners, 3000)" onclick="changeNumber('up')">+</span>
-                        <input type="number" onclick="moveSpinners()" onmouseenter="clearTimeout(spinnerTimer)" onmouseleave="spinnerTimer = setTimeout(hideSpinners, 3000)" onchange="if(value == 1){document.getElementById('pluralToggle').textContent='Commander&nbsp;'}else{document.getElementById('pluralToggle').textContent='Commanders'}" id="number" class="commanderInput" value="3" min="1" max="6" readonly>
-                        <span id="minus" class="inputSpinner" style="font-size: 30px;" onmouseenter="clearTimeout(spinnerTimer)" onmouseleave="spinnerTimer = setTimeout(hideSpinners, 3000)" onclick="changeNumber('down')">-</span>
+                    <div class="counterWrapper">
+                        <span id="counterSub" class="counter" onclick="changeNumber('down')">-</span>
+                        <input type="number" id="number" class="commanderInput" min="1" max="6" value="3" readonly>
+                        <span id="counterAdd" class="counter" onclick="changeNumber('up')">+</span>
                     </div>
-                    <button id="commanderButton" class="commanderButton" onclick="getCommanders(selection)">Get &nbsp;&nbsp;&nbsp; random <span id="pluralToggle">Commanders</span></button>
+                    <button id="commanderButton" class="commanderButton button" onclick="getCommanders(selection)">Get random Commanders</button>
                 </div>
-                <button id="randomButton" class="commanderButton" onclick="randomColors()">Choose random colors for me</button>
+                <button id="randomButton" class="commanderButton button" onclick="randomColors()">Choose random colors for me</button>
 
             </div>
             <div id="cardWrapper" style="position: relative;width: 100%;height: 100%;overflow-y: hidden;">
